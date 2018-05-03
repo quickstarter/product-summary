@@ -1,9 +1,15 @@
-let faker = require('faker');
-let Product = require('./index.js');
+const faker = require('faker');
+const Product = require('./index.js');
+const fs = require('fs');
+const stream = require('stream'); 
 
 
-var saveProducts = function() {
-  for (var i = 0; i < 100; i++) {
+const saveProducts = function() {
+  console.time('data');
+  let fd = fs.openSync('datafile.json', 'a');
+  let data = [];
+  for (let i = 1; i <= 1000000; i++) {
+    console.time('datagroup')
     let instance = new Product({
       projectID: i,
       mainDisplay: {
@@ -28,20 +34,25 @@ var saveProducts = function() {
         numberProducts: 1,
       },
     });
-    instance.save((err, res) => {
-      if (err) {
-        return console.error(err);
-      } else {
-        console.log(`successful, res is :: ${res}`)
+    data.push(instance)
+    if (i % 1000 === 0) {
+      fs.appendFileSync(fd, data)
+      data = [];
+      if (i % 5000 === 0) {
+        console.timeEnd('datagroup');
       }
-    })
+    }
   }
+  console.log('data created');
+  fs.closeSync(fd);
+  console.timeEnd('data');
+  return;
 }
 
-let getRndIntIncl = function(min, max) {
+const getRndIntIncl = function(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-saveProducts()
+saveProducts();
