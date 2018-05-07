@@ -41,7 +41,7 @@ const saveProducts = function() {
       data = [];
       if (i % 5000 === 0) {
         datacount += 5000;
-        console.log('Files appened: ', datacount);
+        console.log('Files appended: ', datacount);
         console.timeEnd('datagroup');
       }
     }

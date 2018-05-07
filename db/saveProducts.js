@@ -1,7 +1,6 @@
 const faker = require('faker');
 const Product = require('./index.js');
 const fs = require('fs');
-const stream = require('stream'); 
 
 
 const saveProducts = function() {
@@ -41,7 +40,7 @@ const saveProducts = function() {
       data = [];
       if (i % 5000 === 0) {
         datacount += 5000;
-        console.log('Files appened: ', datacount);
+        console.log('Files appended: ', datacount);
         console.timeEnd('datagroup');
       }
     }
