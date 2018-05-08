@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -5,6 +6,7 @@ const bodyParser = require('body-parser');
 const Product = require('../db/index.js');
 const cors = require('cors');
 const app = express();
+
 
 app.use(cors());
 app.use(bodyParser.json());
