@@ -62,6 +62,8 @@
     "radium": "^0.24.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-test-renderer": "^16.3.2"
+    "react-test-renderer": "^16.3.2",
+    "redis": "^2.8.0",
+    "response-time": "^2.3.2"
   }
 }
