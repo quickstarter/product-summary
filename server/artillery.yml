@@ -10,4 +10,4 @@ scenarios:
       - loop:
         - get:
             url: "/api/{{ $randomNumber(1,10000000) }}"
-        count: 50
+        count: 40
