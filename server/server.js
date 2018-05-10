@@ -26,7 +26,7 @@ app.use(responseTime());
 app.get('/api/:id', (req, res) => {
   redisClient.get(`info-${req.params.id}`, (error, result) => {
     if (result) {
-      res.status(200).json(JSON.parse(result));
+      res.status(200).send(result);
     } else {
       Product.find({ projectID: req.params.id}, function (err, data) {
         if (err) {
