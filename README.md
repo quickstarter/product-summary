@@ -1,13 +1,10 @@
 # FEC-Product-Summary
 
-Front End Capstone Project :: Kickstarter :: Product Summary
+Front End Capstone Project :: Quickstarter :: Product Summary
 
-## Related Projects
+## Project Repositry
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/quickstarter
 
 ## Table of Contents
 

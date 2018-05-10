@@ -15,7 +15,7 @@ const saveProducts = function() {
       mainDisplay: {
         title: faker.commerce.productName(),
         description: faker.lorem.paragraph(),
-        img: faker.image.avatar(),
+        img: `https://s3.amazonaws.com/jumpstarter-pics/product${getRndInteger(1, 1000)}.jpg,`,
       },
       product: {
         name: faker.commerce.productName(),
