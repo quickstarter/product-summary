@@ -1,34 +1,26 @@
 import React from 'react';
 /************************************************************************/
-class Title extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const style = {
+  gridRow: '2 / span 1',
+  gridColumn: '3 / span 1',
+  title: {
+    fontSize: '38px',
+    marginBottom: '18px',
+  },
+  description: {
+    fontSize: '18px',
+  },
+};
 
-  render() {
-    const style = {
-        gridRow: '2 / span 1',
-        gridColumn: '3 / span 2',
-        title: {
-          fontSize: '38px',
-          marginBottom: '18px',
-        },
-        description: {
-          fontSize: '18px',
-        },
-    }
-
-    return (
-      <div id="title" style={style}>
-        <div
-          style={style.title}>{this.props.data.mainDisplay.title}
-        </div>
-        <div style={style.description}>{this.props.data.mainDisplay.description}
-        </div>
-      </div>
-    )
-  }
-}
+const Title = ({data}) => (
+  <div id="title" style={style}>
+    <div
+      style={style.title}>{data.mainDisplay.title}
+    </div>
+    <div style={style.description}>{data.mainDisplay.description}
+    </div>
+  </div>
+);
     /************************************************************************/
 
     export default Title;

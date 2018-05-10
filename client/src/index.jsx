@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import data from '../../db/sampleData';
+import sample from '../../db/sampleData.js';
 import Creator from './components/Creator.js'
 import Title from './components/Title.js';
 import MainImage from './components/MainImage.js';
@@ -12,18 +12,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: data[0], /* data[0] --- default case */
+      data: sample[0],
     }
   }
 
   componentDidMount() {
     const context = this;
-    console.log('component did mount');
     axios.get(`http://127.0.0.1:3001/api/${this.props.projectId}`)
       .then((response) => {
-        console.log(response.data)
         context.setState({
-          data: response.data[0]
+          data: response.data[0],
         });
       })
       .catch((error) => {
@@ -34,7 +32,6 @@ class App extends React.Component {
 
 
   render() {
-    console.log(this.state.data)
     const style = {
       display: "grid",
       gridTemplateColumns: "180px 200px 620px 235px 235px 180px",
@@ -48,7 +45,7 @@ class App extends React.Component {
       color: "rgb(40, 40, 40)",
       gridAutoFlow: 'row',
       gridAutoFlow: 'column',
-    }
+    };
 
     return (
       <div className="App" style={style}>
@@ -58,9 +55,8 @@ class App extends React.Component {
         <Footer data={this.state.data}/>
         <Stats data={this.state.data}/>
       </div>
-    )
+    );
   }
-
 }
 
 window.React = React;

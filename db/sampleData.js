@@ -2,25 +2,25 @@ let sampleData = [
   {
     projectId: 0,
     mainDisplay: {
-      title: 'Go Go Gadget Ski Boots',
-      description: 'Awesome Ski Boots With Gadgets.',
-      img: 'https://s17.postimg.cc/vfa18ro8v/inspector_gadget.png',
+      title: 'Loading',
+      description: 'Loading',
+      img: '',
     },
     product: {
-      name: 'Fantastic Cotton Car',
-      category: 'Computers',
-      numBackers: 17,
-      amtPledged: 4532,
+      name: '',
+      category: '',
+      numBackers: 0,
+      amtPledged: 0,
     },
     target: {
-      endDate: '12/14/2018',
-      amt: 35509,
+      endDate: '',
+      amt: 0,
     },
     creator: {
-      name: 'Lionel Littel',
-      location: 'Savannahfurt, Alaska',
-      avatarImg: 'https://s3.amazonaws.com/uifaces/faces/twitter/kerihenare/128.jpg',
-      numberProducts: 1,
+      name: '',
+      location: 'Loading',
+      avatarImg: '',
+      numberProducts: 0,
     },
   },
   {
