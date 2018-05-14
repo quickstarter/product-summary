@@ -8,3 +8,5 @@ Id.txt
 Product.txt
 newrelic.js
 newrelic_agent.log
+app-server.js
+app.js

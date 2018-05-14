@@ -8,7 +8,7 @@ import MainImage from './components/MainImage.js';
 import Footer from './components/Footer.js';
 import Stats from './components/Stats.js';
 /***********************************************************************/
-class App extends React.Component {
+export default class Product extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,9 +58,5 @@ class App extends React.Component {
     );
   }
 }
-
-window.React = React;
-window.ReactDOM = ReactDOM;
-window.App = App;
 
 // ReactDOM.render(<App />, document.getElementById('Summary'));
