@@ -1,25 +1,42 @@
+const webpack = require('webpack');
 const path = require('path');
 
-module.exports = {
-  mode: 'development',
-  entry: './client/src/index.jsx',
-  output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'client/public'),
-  },
+
+const common = {
+  context: __dirname + '/client',
   module: {
     rules: [
       {
-        test: /\.jsx?/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
-          presets: ['react', 'es2015'],
+          presets: ['react', 'es2015', 'env']
         },
       },
     ],
-  },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
+  }
 };
+
+const client = {
+  entry: './client.js',
+  output: {
+    path: __dirname + '/public',
+    filename: 'app.js'
+  }
+};
+
+const server = {
+  entry: './server.js',
+  target: 'node',
+  output: {
+    path: __dirname + '/public',
+    filename: 'app-server.js',
+    libraryTarget: 'commonjs-module'
+  }
+};
+
+module.exports = [
+  Object.assign({}, common, client),
+  Object.assign({}, common, server)
+];

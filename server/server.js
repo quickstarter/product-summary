@@ -7,7 +7,7 @@ const redis = require('redis');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const responseTime = require('response-time');
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 const app = express();
 const redisClient = redis.createClient('redis://127.0.0.1:6379');
@@ -19,7 +19,7 @@ redisClient.on("error", function (err) {
 app.use(cors());
 app.use(bodyParser.json());
 app.use(responseTime());
-app.use(express.static(path.join(__dirname, '/../client/public')));
+app.use(express.static(path.join(__dirname, '../public/')));
 
 
 
